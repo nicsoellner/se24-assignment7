@@ -234,6 +234,29 @@ class DoublyLinkedListTest {
         Assertions.assertEquals("0.9<->0.5<->0.4", list.toString());
     }
 
+    @Test
+    void testInsertElement(){
+// given: the list has three elements
+        Assertions.assertTrue(list.isEmpty());
+        // when: inserting a new element
+        list.insert(new DoublyLinkedList.Element(0.6));
+        // then: the list has four elements...
+        Assertions.assertEquals(1, list.getLength());
+        // ...and the elements are in the correct order
+        Assertions.assertArrayEquals(new double[]{0.6}, list.asArray());
+}
+
+    @Test
+    void testInsertElementDouble(){
+// given: the list has three elements
+        Assertions.assertTrue(list.isEmpty());
+        // when: inserting a new element
+        list.insert(0.6);
+        // then: the list has four elements...
+        Assertions.assertEquals(1, list.getLength());
+        // ...and the elements are in the correct order
+        Assertions.assertArrayEquals(new double[]{0.6}, list.asArray());
+    }
     /**
      * Helper method to test begin and end pointers of a doubly linked list
      * @param list List to test
